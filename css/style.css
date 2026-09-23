@@ -39,6 +39,7 @@ body {
   font-size: 16px;
   line-height: 1.9;
   letter-spacing: 0.04em;
+  word-break: auto-phrase;
   -webkit-font-smoothing: antialiased;
 }
 
