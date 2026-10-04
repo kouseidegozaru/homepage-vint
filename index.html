@@ -8,10 +8,10 @@
   <meta property="og:title" content="Vint. Nail and Total Beauty">
   <meta property="og:description" content="松本市浅間温泉のネイル&トータルビューティーサロン Vint. / grace">
   <meta property="og:type" content="website">
-  <meta name="theme-color" content="#ebe9e5">
+  <meta name="theme-color" content="#f8f3ec">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Zen+Old+Mincho:wght@400;500&family=Zen+Kaku+Gothic+New:wght@400;500&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;1,300&family=STIX+Two+Text:ital,wght@0,400;0,500;1,400&family=Shippori+Mincho:wght@400;500&display=swap">
   <link rel="stylesheet" href="css/style.css">
   <script>document.documentElement.classList.add("js");</script>
 </head>
@@ -30,124 +30,135 @@
 
   <main id="top">
 
-    <!-- ========== Hero ========== -->
+    <!-- ========== Hero（写真を全面に。PC は2枚を並べる） ========== -->
     <section class="hero" aria-label="Vint.">
-      <div class="hero-text">
+      <!-- 写真のスライド。PC は1枚のスライドに2枚を左右に並べ、スマホは左側の1枚だけ -->
+      <div class="hero-slides">
+        <div class="hero-slide is-active">
+          <img src="assets/photos/hero.jpg" alt="モカブラウンのグラデーションネイル">
+          <img class="hero-slide-sub" src="assets/photos/gallery-1.jpg" alt="シルバーのミラーネイル">
+        </div>
+        <div class="hero-slide">
+          <img src="assets/photos/concept-1.jpg" alt="ブラウンとシルバーのマグネットネイル">
+          <img class="hero-slide-sub" src="assets/photos/gallery-3.jpg" alt="ベージュにブラウンのドットネイル">
+        </div>
+        <div class="hero-slide">
+          <img src="assets/photos/gallery-4.jpg" alt="ブラックのマグネットネイル">
+          <img class="hero-slide-sub" src="assets/photos/gallery-2.jpg" alt="ネイビーのワンカラーネイル">
+        </div>
+      </div>
+      <div class="hero-dots" aria-hidden="true"><span class="is-active"></span><span></span><span></span></div>
+      <div class="hero-inner">
+        <h1 class="hero-logo"><img src="assets/logo-light.png" alt="Vint." width="448" height="304"></h1>
         <p class="hero-eyebrow">Nail and Total Beauty</p>
-        <p class="hero-copy">指先から、<br>あなたらしい色を。</p>
-        <p class="hero-place">Matsumoto<br>Asama Onsen</p>
+        <p class="hero-copy">指先から、あなたらしい色を。</p>
       </div>
-      <figure class="hero-photo reveal">
-        <img src="assets/photos/hero.jpg" alt="モカブラウンのグラデーションネイル">
-      </figure>
-      <h1 class="hero-logo">Vint.</h1>
+      <p class="hero-place">Matsumoto, Asama Onsen</p>
     </section>
 
-    <!-- ========== 01 Concept ========== -->
+    <!-- ========== Concept ========== -->
     <section class="sec sec--concept" id="concept">
-      <div class="sec-index"><span class="sec-num">01</span><span class="sec-label">Concept</span></div>
-      <div class="sec-body concept">
-        <div class="concept-text">
-          <h2 class="heading">ゆったりと、<br>自分のための時間を。</h2>
-          <p>松本市・浅間温泉のネイル&amp;トータルビューティーサロンです。ネイルはもちろん、ヘアや色選びについてもお気軽にご相談ください。</p>
-          <div class="actions">
-            <a class="btn btn--key" href="https://www.instagram.com/vint_nail_beauty_salon/" target="_blank" rel="noopener">ご予約・お問い合わせ<span class="btn-arrow" aria-hidden="true">&rarr;</span></a>
-            <a class="text-link" href="#access">アクセス</a>
-          </div>
-        </div>
-        <div class="concept-photos">
-          <figure class="concept-photo concept-photo--a reveal"><img src="assets/photos/concept-1.jpg" alt="ブラウンとシルバーのマグネットネイル" loading="lazy"></figure>
-          <figure class="concept-photo concept-photo--b reveal"><img src="assets/photos/concept-2.jpg" alt="くすみパープルのワンカラーネイル" loading="lazy"></figure>
-        </div>
+      <div class="sec-head">
+        <h2 class="sec-title">Concept</h2>
+      </div>
+      <p class="lead">ゆったりと、<br>自分のための時間を。</p>
+      <p class="sec-text">松本市・浅間温泉のネイル&amp;トータルビューティーサロンです。<br class="pc">ネイルはもちろん、ヘアや色選びについてもお気軽にご相談ください。</p>
+      <div class="actions">
+        <a class="btn btn--key" href="https://www.instagram.com/vint_nail_beauty_salon/" target="_blank" rel="noopener">ご予約・お問い合わせ</a>
+        <a class="btn btn--line" href="#access">アクセス</a>
       </div>
     </section>
 
-    <!-- ========== 02 Gallery（Instagram の投稿写真） ========== -->
+    <!-- ========== 全幅の写真帯 ========== -->
+    <figure class="band reveal">
+      <img src="assets/photos/concept-1.jpg" alt="ブラウンとシルバーのマグネットネイル" loading="lazy">
+    </figure>
+
+    <!-- ========== Gallery（Instagram の投稿写真） ========== -->
     <section class="sec sec--gallery" id="gallery">
-      <div class="sec-index"><span class="sec-num">02</span><span class="sec-label">Gallery</span></div>
-      <div class="sec-body">
-        <div class="gallery-head">
-          <h2 class="heading-en">Nail Design</h2>
-          <p class="gallery-hint" aria-hidden="true">Scroll &rarr;</p>
-        </div>
+      <div class="sec-head">
+        <h2 class="sec-title">Nail Design</h2>
       </div>
       <ul class="gallery" aria-label="ネイルデザイン">
         <li class="gallery-item"><figure><img src="assets/photos/gallery-1.jpg" alt="" loading="lazy"><figcaption><span>No.01</span>シルバーのミラーネイル</figcaption></figure></li>
         <li class="gallery-item"><figure><img src="assets/photos/gallery-2.jpg" alt="" loading="lazy"><figcaption><span>No.02</span>ネイビーのワンカラーネイル</figcaption></figure></li>
         <li class="gallery-item"><figure><img src="assets/photos/gallery-3.jpg" alt="" loading="lazy"><figcaption><span>No.03</span>ベージュにブラウンのドットネイル</figcaption></figure></li>
         <li class="gallery-item"><figure><img src="assets/photos/gallery-4.jpg" alt="" loading="lazy"><figcaption><span>No.04</span>ブラックのマグネットネイル</figcaption></figure></li>
-        <li class="gallery-item"><figure><img src="assets/photos/gallery-5.jpg" alt="" loading="lazy"><figcaption><span>No.05</span>ブラウンとゴールドのフットネイル</figcaption></figure></li>
       </ul>
-      <div class="sec-body">
-        <a class="text-link" href="https://www.instagram.com/vint_nail_beauty_salon/" target="_blank" rel="noopener">最新のデザインは Instagram にて</a>
+      <div class="actions">
+        <a class="btn btn--line" href="https://www.instagram.com/vint_nail_beauty_salon/" target="_blank" rel="noopener">最新のデザインは Instagram にて</a>
       </div>
     </section>
 
-    <!-- ========== 03 About ========== -->
-    <section class="sec sec--about" id="about">
-      <div class="sec-index"><span class="sec-num">03</span><span class="sec-label">About</span></div>
-      <div class="sec-body about">
-        <h2 class="about-name">
+    <!-- ========== About（写真と文章を半々に） ========== -->
+    <section class="about" id="about">
+      <figure class="about-photo">
+        <img src="assets/photos/concept-2.jpg" alt="くすみパープルのワンカラーネイル" loading="lazy">
+      </figure>
+      <div class="about-body">
+        <h2 class="sec-title">About</h2>
+        <p class="about-name">
           <span class="about-role">Vint. / grace 代表</span>
           千國 美穂
-        </h2>
-        <div class="about-text">
-          <p>ネイル・色彩・ヘアの知識を活かし、肌や髪の色、普段の装いに合わせてお似合いの色をご提案いたします。指先から全体の印象まで、美しく整えるお手伝いをいたします。</p>
-          <ul class="credentials" aria-label="保有資格">
-            <li><span>i</span>ネイリスト検定1級</li>
-            <li><span>ii</span>カラーアドバイザー</li>
-            <li><span>iii</span>美容師</li>
-          </ul>
-        </div>
+        </p>
+        <p>ネイル・色彩・ヘアの知識を活かし、肌や髪の色、普段の装いに合わせてお似合いの色をご提案いたします。指先から全体の印象まで、美しく整えるお手伝いをいたします。</p>
+        <ul class="credentials" aria-label="保有資格">
+          <li><span>i</span>ネイリスト検定1級</li>
+          <li><span>ii</span>カラーアドバイザー</li>
+          <li><span>iii</span>美容師</li>
+        </ul>
       </div>
     </section>
 
-    <!-- ========== 04 Salon ========== -->
+    <!-- ========== Salon ========== -->
     <section class="sec sec--salons" id="salons">
-      <div class="sec-index"><span class="sec-num">04</span><span class="sec-label">Salon</span></div>
-      <div class="sec-body">
-        <h2 class="heading">店舗のご案内</h2>
-        <div class="salons">
-          <article class="salon">
-            <h3 class="salon-name">Vint.<span>Nail and Total Beauty</span></h3>
-            <p class="salon-desc">ネイルをはじめ、ヘアや色選びまで、美容に関するご相談を幅広く承っております。</p>
-            <dl class="salon-info">
-              <div><dt>住所</dt><dd>〒390-0303<br>長野県松本市浅間温泉1-25-24</dd></div>
-              <div><dt>駐車場</dt><dd>あり</dd></div>
-            </dl>
-            <a class="text-link" href="https://www.google.com/maps/search/?api=1&amp;query=%E9%95%B7%E9%87%8E%E7%9C%8C%E6%9D%BE%E6%9C%AC%E5%B8%82%E6%B5%85%E9%96%93%E6%B8%A9%E6%B3%891-25-24" target="_blank" rel="noopener">Googleマップで開く</a>
-          </article>
+      <div class="sec-head">
+        <h2 class="sec-title">Salon</h2>
+        <p class="sec-sub">店舗のご案内</p>
+      </div>
+      <div class="salons">
+        <article class="salon">
+          <h3 class="salon-name">Vint.<span>Nail and Total Beauty</span></h3>
+          <p class="salon-desc">ネイルをはじめ、ヘアや色選びまで、美容に関するご相談を幅広く承っております。</p>
+          <dl class="salon-info">
+            <div><dt>住所</dt><dd>〒390-0303<br>長野県松本市浅間温泉1-25-24</dd></div>
+            <div><dt>駐車場</dt><dd>あり</dd></div>
+          </dl>
+          <a class="text-link" href="https://www.google.com/maps/search/?api=1&amp;query=%E9%95%B7%E9%87%8E%E7%9C%8C%E6%9D%BE%E6%9C%AC%E5%B8%82%E6%B5%85%E9%96%93%E6%B8%A9%E6%B3%891-25-24" target="_blank" rel="noopener">Googleマップで開く</a>
+        </article>
 
-          <article class="salon">
-            <h3 class="salon-name">grace<span>Nail and more</span></h3>
-            <p class="salon-desc">ネイルを中心としたメニューをご用意しております。</p>
-            <dl class="salon-info">
-              <div><dt>住所</dt><dd>〒390-0303<br>長野県松本市浅間温泉1-7-16-1</dd></div>
-              <div><dt>駐車場</dt><dd>あり</dd></div>
-            </dl>
-            <a class="text-link" href="https://www.google.com/maps/search/?api=1&amp;query=%E9%95%B7%E9%87%8E%E7%9C%8C%E6%9D%BE%E6%9C%AC%E5%B8%82%E6%B5%85%E9%96%93%E6%B8%A9%E6%B3%891-7-16-1" target="_blank" rel="noopener">Googleマップで開く</a>
-          </article>
-        </div>
+        <article class="salon">
+          <h3 class="salon-name">grace<span>Nail and more</span></h3>
+          <p class="salon-desc">ネイルを中心としたメニューをご用意しております。</p>
+          <dl class="salon-info">
+            <div><dt>住所</dt><dd>〒390-0303<br>長野県松本市浅間温泉1-7-16-1</dd></div>
+            <div><dt>駐車場</dt><dd>あり</dd></div>
+          </dl>
+          <a class="text-link" href="https://www.google.com/maps/search/?api=1&amp;query=%E9%95%B7%E9%87%8E%E7%9C%8C%E6%9D%BE%E6%9C%AC%E5%B8%82%E6%B5%85%E9%96%93%E6%B8%A9%E6%B3%891-7-16-1" target="_blank" rel="noopener">Googleマップで開く</a>
+        </article>
       </div>
     </section>
 
-    <!-- ========== 05 Access ========== -->
+    <!-- ========== Access ========== -->
     <section class="sec sec--access" id="access">
-      <div class="sec-index"><span class="sec-num">05</span><span class="sec-label">Access</span></div>
-      <div class="sec-body access">
-        <figure class="map reveal">
+      <div class="sec-head">
+        <h2 class="sec-title">Access</h2>
+        <p class="sec-sub">ご予約・お問い合わせ</p>
+      </div>
+      <div class="access">
+        <figure class="map">
           <svg viewBox="0 0 320 310" role="img" aria-labelledby="map-title map-desc">
             <title id="map-title">Vint. と grace の周辺地図</title>
             <desc id="map-desc">Vint. はキッセイ文化ホールの北東、grace は松本市野球場の南に位置しております。</desc>
         
             <!-- 方位 -->
-            <g fill="#7d7873">
-              <text x="22" y="30" font-size="11" text-anchor="middle" font-family="EB Garamond, serif" font-weight="500">N</text>
+            <g fill="#8c7f75">
+              <text x="22" y="30" font-size="11" text-anchor="middle" font-family="STIX Two Text, serif" font-weight="500">N</text>
               <path d="M22 36 L27 46 L17 46 Z"/>
             </g>
         
             <!-- 道路 -->
-            <g stroke="#d0ccc6" stroke-width="2" fill="none" stroke-linecap="round">
+            <g stroke="#e2d8cc" stroke-width="2" fill="none" stroke-linecap="round">
               <line x1="84" y1="14" x2="84" y2="300"/>
               <line x1="112" y1="14" x2="112" y2="300"/>
               <line x1="160" y1="100" x2="160" y2="300"/>
@@ -157,11 +168,11 @@
             </g>
         
             <!-- 女鳥羽川 -->
-            <line x1="98" y1="14" x2="98" y2="300" stroke="#b5c0c3" stroke-width="3"/>
-            <text x="92" y="128" font-size="11" fill="#7d7873" style="writing-mode: vertical-rl" letter-spacing="2">女鳥羽川</text>
+            <line x1="98" y1="14" x2="98" y2="300" stroke="#c9d3d2" stroke-width="3"/>
+            <text x="92" y="128" font-size="11" fill="#8c7f75" style="writing-mode: vertical-rl" letter-spacing="2">女鳥羽川</text>
         
             <!-- ランドマーク -->
-            <g fill="#7d7873" font-size="11" font-family="Zen Kaku Gothic New, sans-serif">
+            <g fill="#8c7f75" font-size="11" font-family="Shippori Mincho, serif">
               <circle cx="74" cy="92" r="4.5"/>
               <text x="66" y="80" text-anchor="end">キッセイ</text>
               <text x="66" y="93" text-anchor="end">文化ホール</text>
@@ -177,25 +188,24 @@
         
             <!-- Vint. -->
             <g>
-              <text x="120" y="54" font-size="26" font-style="italic" fill="#6e4f62" font-family="EB Garamond, serif" letter-spacing="2">Vint.</text>
-              <circle cx="128" cy="70" r="6" fill="#6e4f62"/>
-              <rect x="121" y="81" width="14" height="14" fill="#6e4f62"/>
+              <text x="120" y="54" font-size="26" font-weight="500" fill="#8a6f3a" font-family="STIX Two Text, serif" letter-spacing="3">Vint.</text>
+              <circle cx="128" cy="70" r="6" fill="#8a6f3a"/>
+              <rect x="121" y="81" width="14" height="14" fill="#8a6f3a"/>
               <text x="128" y="92" font-size="10" font-weight="700" text-anchor="middle" fill="#fff" font-family="sans-serif">P</text>
             </g>
         
             <!-- grace -->
             <g>
-              <rect x="261" y="226" width="14" height="14" fill="#2b2826"/>
+              <rect x="261" y="226" width="14" height="14" fill="#a7766d"/>
               <text x="268" y="237" font-size="10" font-weight="700" text-anchor="middle" fill="#fff" font-family="sans-serif">P</text>
-              <circle cx="268" cy="252" r="6" fill="#2b2826"/>
-              <text x="270" y="286" font-size="24" font-style="italic" text-anchor="middle" fill="#2b2826" font-family="EB Garamond, serif" letter-spacing="1">grace</text>
+              <circle cx="268" cy="252" r="6" fill="#a7766d"/>
+              <text x="270" y="286" font-size="24" font-weight="500" text-anchor="middle" fill="#a7766d" font-family="STIX Two Text, serif" letter-spacing="3">grace</text>
             </g>
           </svg>
           <figcaption>周辺の略図です。詳しい場所はGoogleマップにてご確認ください。</figcaption>
         </figure>
 
         <div class="contact">
-          <h2 class="heading">ご予約・<br>お問い合わせ</h2>
           <p>ご予約は、InstagramのDMまたはお電話にて承っております。最新のネイルデザインはInstagramにて随時ご紹介しております。</p>
 
           <div class="tel">
@@ -203,7 +213,7 @@
             <a class="tel-number" href="tel:09077334964">090-7733-4964</a>
           </div>
 
-          <a class="btn btn--key" href="https://www.instagram.com/vint_nail_beauty_salon/" target="_blank" rel="noopener">Instagram @vint_nail_beauty_salon<span class="btn-arrow" aria-hidden="true">&rarr;</span></a>
+          <a class="btn btn--key" href="https://www.instagram.com/vint_nail_beauty_salon/" target="_blank" rel="noopener">Instagram @vint_nail_beauty_salon</a>
         </div>
       </div>
     </section>
@@ -217,6 +227,32 @@
   </footer>
 
   <script>
+    // ヒーローを過ぎたらヘッダーに地色を敷く
+    (function () {
+      var header = document.querySelector(".site-header");
+      var hero = document.querySelector(".hero");
+      var update = function () {
+        header.classList.toggle("is-solid", window.scrollY > hero.offsetHeight - header.offsetHeight);
+      };
+      update();
+      window.addEventListener("scroll", update, { passive: true });
+    })();
+
+    // ヒーローの写真を一定間隔でフェードで切り替える
+    (function () {
+      var slides = document.querySelectorAll(".hero-slide");
+      var dots = document.querySelectorAll(".hero-dots span");
+      var current = 0;
+      if (slides.length < 2) return;
+      setInterval(function () {
+        slides[current].classList.remove("is-active");
+        dots[current].classList.remove("is-active");
+        current = (current + 1) % slides.length;
+        slides[current].classList.add("is-active");
+        dots[current].classList.add("is-active");
+      }, 6000);
+    })();
+
     // 写真を画面に入ったタイミングで表示する（JS無効時は .js が付かず常に表示）
     (function () {
       var items = document.querySelectorAll(".reveal");
