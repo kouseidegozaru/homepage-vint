@@ -1,7 +1,7 @@
 # homepage-vint
 
 松本市浅間温泉のネイル&トータルビューティーサロン **Vint.** と姉妹店 **grace** のランディングページです。
-アイボリー×グレージュ×くすみローズを基調にした、明るく落ち着いたデザインです。
+写真の背景（コンクリートの壁）に合わせた石のグレーを地色に、焦げ茶の文字とプラムの差し色で構成した静かなデザインです。
 
 ## 構成
 
@@ -9,9 +9,9 @@
 - `css/style.css` — スタイル
 - `assets/card.jpg` — 名刺画像（地図・連絡先の参照元）
 - `assets/photos/` — 掲載写真（Instagram @vint_nail_beauty_salon の投稿から取得）
-  - `hero.jpg` — ヒーロー右側
+  - `hero.jpg` — ヒーロー右側（巨大ロゴ「Vint.」と重なります）
   - `concept-1.jpg` / `concept-2.jpg` — コンセプト横
-  - `gallery-1.jpg` 〜 `gallery-5.jpg` — ギャラリー（1枚目が大きく表示されます）
+  - `gallery-1.jpg` 〜 `gallery-5.jpg` — ギャラリー（横スクロール。キャプションは index.html の figcaption）
 
 ビルドやバックエンドは不要です。`index.html` をブラウザで開くか、GitHub Pages などの静的ホスティングにそのまま配置してください。
 
