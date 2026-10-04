@@ -16,8 +16,8 @@
 - `index.html` — ページ本体（ヒーロー / コンセプト / ギャラリー / 代表紹介 / 店舗案内 / アクセス・予約導線）
 - `css/style.css` — スタイル
 - `assets/logo.jpg` — ロゴ原本（黒地）
-- `assets/logo.png` — ロゴの透過版（金。原本から黒地を抜いて作成）
-- `assets/logo-light.png` — ロゴの透過版（白。ヒーローの写真の上で使用）
+- `assets/logo.svg` — ロゴのベクター版（金）。飾りは原本をトレースし、文字「Vint.」はベース書体 STIX Two Text（ウェイト 600）の字形で描き直したもの
+- `assets/logo-light.svg` — 同じロゴの白版（ヒーローの写真の上で使用）
 - `assets/card.jpg` — 名刺画像（地図・連絡先の参照元）
 - `assets/photos/` — 掲載写真（Instagram @vint_nail_beauty_salon の投稿から取得）
   - ヒーロー — 6秒ごとにフェードで切り替わるスライド（PC は1枚のスライドに2枚を左右に並べ、スマホは左側の1枚のみ）。組み合わせは index.html の `.hero-slide`
