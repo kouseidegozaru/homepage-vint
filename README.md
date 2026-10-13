@@ -13,12 +13,16 @@
 
 ## 構成
 
-- `index.html` — ページ本体（ヒーロー / コンセプト / ギャラリー / 代表紹介 / 店舗案内 / アクセス・予約導線）
+- `index.html` — ページ本体（ヒーロー / コンセプト / ギャラリー / 代表紹介 / 動画（Instagram のリール8本。1本を大きく無音で流し、横のタイトル一覧で切り替え。終わると次へ進む） / 店舗案内 / アクセス・予約導線）
 - `css/style.css` — スタイル
 - `assets/logo.jpg` — ロゴ原本（黒地）
 - `assets/logo.svg` — ロゴのベクター版（金）。飾りは原本をトレースし、文字「Vint.」はベース書体 STIX Two Text（ウェイト 600）の字形で描き直したもの
 - `assets/logo-light.svg` — 同じロゴの白版（ヒーローの写真の上で使用）
 - `assets/card.jpg` — 名刺画像（地図・連絡先の参照元）
+- `assets/videos/` — Movie の動画（Instagram @vint_nail_beauty_salon のリールから取得し、幅540pxに圧縮）
+  - `reel-1.mp4` 〜 `reel-8.mp4` — 動画本体（表示中の1本だけ読み込む）
+  - `reel-1.jpg` 〜 `reel-8.jpg` — 読み込み前に表示するサムネイル
+  - 動画の並びと各リールへのリンクは index.html の `.movie-item`（`data-src` / `data-url`）
 - `assets/photos/` — 掲載写真（Instagram @vint_nail_beauty_salon の投稿から取得）
   - ヒーロー — 6秒ごとにフェードで切り替わるスライド（PC は1枚のスライドに2枚を左右に並べ、スマホは左側の1枚のみ）。組み合わせは index.html の `.hero-slide`
   - `concept-1.jpg` — コンセプト下の全幅の写真帯

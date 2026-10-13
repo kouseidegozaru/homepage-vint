@@ -459,9 +459,124 @@ p {
   color: var(--gold-deep);
 }
 
-.sec--gallery .actions {
-  padding: 0 var(--gutter);
-  margin-top: 64px;
+/* ---------- Movie（1本を大きく、横にタイトルの目次） ---------- */
+
+.sec--movie {
+  background: var(--cream);
+}
+
+.movie {
+  display: grid;
+  grid-template-columns: minmax(0, 400px) minmax(0, 420px);
+  justify-content: center;
+  gap: clamp(48px, 8vw, 128px);
+  align-items: center;
+  text-align: left;
+}
+
+.movie-screen {
+  position: relative;
+  aspect-ratio: 9 / 16;
+  background: var(--line);
+  overflow: hidden;
+}
+
+/* 元動画のふちに入っている角丸と黒帯を、わずかに拡大して隠す */
+.movie-video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.06);
+  transition: opacity 0.4s ease;
+}
+
+.movie-video.is-contain {
+  object-fit: contain;
+  transform: none;
+}
+
+.movie-video.is-changing {
+  opacity: 0;
+}
+
+.movie-sound {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  padding: 4px 0;
+  border: 0;
+  border-bottom: 1px solid rgba(253, 250, 245, 0.8);
+  background: none;
+  font-family: var(--f-en);
+  font-style: italic;
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  color: var(--cream);
+  text-shadow: 0 0 8px rgba(59, 48, 42, 0.5);
+  cursor: pointer;
+}
+
+.movie-side .sec-head {
+  margin-bottom: 40px;
+}
+
+.movie-side .sec-title::after {
+  margin-left: 0;
+}
+
+.movie-list {
+  margin: 0 0 40px;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--line);
+}
+
+.movie-item {
+  position: relative;
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+  width: 100%;
+  padding: 14px 0;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  background: none;
+  font-family: var(--f-mincho);
+  font-size: 15px;
+  letter-spacing: 0.08em;
+  text-align: left;
+  color: var(--mute);
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.movie-item:hover,
+.movie-item.is-active {
+  color: var(--ink);
+}
+
+.movie-num {
+  font-family: var(--f-en);
+  font-style: italic;
+  font-size: 14px;
+  color: var(--gold-deep);
+}
+
+/* 再生中の項目は下罫線が金色で伸びていく */
+.movie-progress {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 1px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.movie-link {
+  font-size: 14px;
 }
 
 /* ---------- About（写真と文章を半々） ---------- */
@@ -727,10 +842,35 @@ p {
     grid-template-columns: minmax(0, 1fr);
   }
 
+  /* 見出し → 動画 → 目次の順に縦に積む */
+  .movie {
+    grid-template-columns: minmax(0, 420px);
+    gap: 0;
+  }
+
+  .movie-side {
+    display: contents;
+  }
+
+  .movie-side .sec-head {
+    order: -1;
+    text-align: center;
+  }
+
+  .movie-side .sec-title::after {
+    margin-left: auto;
+  }
+
+  .movie-screen {
+    width: min(100%, 320px);
+    margin: 0 auto 48px;
+  }
+
   .about-photo {
     min-height: 0;
     aspect-ratio: 4 / 3;
   }
+
 }
 
 /* ---------- Mobile ---------- */
