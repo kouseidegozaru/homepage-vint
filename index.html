@@ -85,9 +85,6 @@
         <li class="gallery-item"><figure><img src="assets/photos/gallery-3.jpg" alt="" loading="lazy"><figcaption><span>No.03</span>ベージュにブラウンのドットネイル</figcaption></figure></li>
         <li class="gallery-item"><figure><img src="assets/photos/gallery-4.jpg" alt="" loading="lazy"><figcaption><span>No.04</span>ブラックのマグネットネイル</figcaption></figure></li>
       </ul>
-      <div class="actions">
-        <a class="btn btn--line" href="https://www.instagram.com/vint_nail_beauty_salon/" target="_blank" rel="noopener">最新のデザインは Instagram にて</a>
-      </div>
     </section>
 
     <!-- ========== About（写真と文章を半々に） ========== -->
@@ -107,6 +104,33 @@
           <li><span>ii</span>カラーアドバイザー</li>
           <li><span>iii</span>美容師</li>
         </ul>
+      </div>
+    </section>
+
+    <!-- ========== Movie（1本を大きく、横にタイトルの目次。目次で切り替え、終わると次へ。動画は assets/videos/） ========== -->
+    <section class="sec sec--movie" id="movie">
+      <div class="movie">
+        <figure class="movie-screen">
+          <video class="movie-video" src="assets/videos/reel-1.mp4" poster="assets/videos/reel-1.jpg" muted playsinline preload="none"></video>
+          <button class="movie-sound" type="button" aria-pressed="false">Sound off</button>
+        </figure>
+        <div class="movie-side">
+          <div class="sec-head">
+            <h2 class="sec-title">Movie</h2>
+            <p class="sec-sub">Instagram のリールより</p>
+          </div>
+          <ol class="movie-list" aria-label="動画の一覧">
+          <li><button class="movie-item is-active" type="button" data-src="assets/videos/reel-1.mp4" data-poster="assets/videos/reel-1.jpg" data-url="https://www.instagram.com/reel/DeMbvS4hPs1/" aria-current="true"><span class="movie-num">01</span>サロンの外観<i class="movie-progress" aria-hidden="true"></i></button></li>
+          <li><button class="movie-item" type="button" data-src="assets/videos/reel-2.mp4" data-poster="assets/videos/reel-2.jpg" data-url="https://www.instagram.com/reel/DddFcixJejC/"><span class="movie-num">02</span>Vint. のご紹介<i class="movie-progress" aria-hidden="true"></i></button></li>
+          <li><button class="movie-item" type="button" data-src="assets/videos/reel-3.mp4" data-poster="assets/videos/reel-3.jpg" data-url="https://www.instagram.com/reel/DdSuIQHOYiG/"><span class="movie-num">03</span>ご来店の様子<i class="movie-progress" aria-hidden="true"></i></button></li>
+          <li><button class="movie-item" type="button" data-src="assets/videos/reel-4.mp4" data-poster="assets/videos/reel-4.jpg" data-url="https://www.instagram.com/reel/DdIdgRAhOlj/"><span class="movie-num">04</span>ナチュラルなロングネイル<i class="movie-progress" aria-hidden="true"></i></button></li>
+          <li><button class="movie-item" type="button" data-src="assets/videos/reel-5.mp4" data-poster="assets/videos/reel-5.jpg" data-url="https://www.instagram.com/reel/DdAwRVFPQ3O/"><span class="movie-num">05</span>夕暮れのサロン外観<i class="movie-progress" aria-hidden="true"></i></button></li>
+          <li><button class="movie-item" type="button" data-src="assets/videos/reel-6.mp4" data-poster="assets/videos/reel-6.jpg" data-url="https://www.instagram.com/reel/DXbcO7bH701/" data-fit="contain"><span class="movie-num">06</span>ネイルコレクション<i class="movie-progress" aria-hidden="true"></i></button></li>
+          <li><button class="movie-item" type="button" data-src="assets/videos/reel-7.mp4" data-poster="assets/videos/reel-7.jpg" data-url="https://www.instagram.com/reel/DQYD8kAjwYJ/"><span class="movie-num">07</span>エステルーム<i class="movie-progress" aria-hidden="true"></i></button></li>
+          <li><button class="movie-item" type="button" data-src="assets/videos/reel-8.mp4" data-poster="assets/videos/reel-8.jpg" data-url="https://www.instagram.com/reel/DQYDzRoAIdT/"><span class="movie-num">08</span>ブラウン系のネイル<i class="movie-progress" aria-hidden="true"></i></button></li>
+          </ol>
+          <a class="text-link movie-link" href="https://www.instagram.com/reel/DeMbvS4hPs1/" target="_blank" rel="noopener">この動画を Instagram で見る</a>
+        </div>
       </div>
     </section>
 
@@ -269,6 +293,69 @@
         });
       }, { threshold: 0.15 });
       items.forEach(function (el) { io.observe(el); });
+    })();
+
+    // Movie：目次で動画を切り替える。画面内にあるときだけ無音で再生し、終わったら次へ
+    (function () {
+      var video = document.querySelector(".movie-video");
+      var items = Array.prototype.slice.call(document.querySelectorAll(".movie-item"));
+      var sound = document.querySelector(".movie-sound");
+      var link = document.querySelector(".movie-link");
+      var calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      var visible = false;
+      var current = 0;
+
+      function play() {
+        if (!visible || (calm && video.muted)) return;
+        var p = video.play();
+        if (p && p.catch) p.catch(function () {});
+      }
+
+      function select(i, autoplay) {
+        items[current].classList.remove("is-active");
+        items[current].removeAttribute("aria-current");
+        items[current].querySelector(".movie-progress").style.transform = "";
+        current = (i + items.length) % items.length;
+        var item = items[current];
+        item.classList.add("is-active");
+        item.setAttribute("aria-current", "true");
+        video.classList.add("is-changing");
+        setTimeout(function () {
+          video.src = item.dataset.src;
+          video.poster = item.dataset.poster;
+          video.classList.toggle("is-contain", item.dataset.fit === "contain");
+          video.classList.remove("is-changing");
+          if (autoplay) play();
+        }, 400);
+        link.href = item.dataset.url;
+      }
+
+      items.forEach(function (item, i) {
+        item.addEventListener("click", function () {
+          if (i === current) { video.paused ? play() : video.pause(); return; }
+          select(i, true);
+        });
+      });
+      video.addEventListener("timeupdate", function () {
+        if (video.duration) {
+          items[current].querySelector(".movie-progress").style.transform = "scaleX(" + (video.currentTime / video.duration) + ")";
+        }
+      });
+      video.addEventListener("ended", function () { select(current + 1, true); });
+
+      sound.addEventListener("click", function () {
+        video.muted = !video.muted;
+        sound.textContent = video.muted ? "Sound off" : "Sound on";
+        sound.setAttribute("aria-pressed", String(!video.muted));
+        play();
+      });
+
+      if ("IntersectionObserver" in window) {
+        new IntersectionObserver(function (entries) {
+          visible = entries[0].isIntersecting;
+          if (visible) { video.preload = "auto"; play(); } else { video.pause(); }
+        }, { threshold: 0.4 }).observe(video);
+      }
     })();
   </script>
 
